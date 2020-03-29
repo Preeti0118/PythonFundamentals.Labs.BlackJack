@@ -23,18 +23,18 @@ class TestDeck(unittest.TestCase):
 
         test_class = blackjack_class.Deal()
         num_cards = test_class.deal_cards(deck)
-        self.assertEqual(len(num_cards), 2)
+        self.assertEqual(len(num_cards), 3)
 
     def test_pointcalc(self):
-        lst = ['S4', 'DT']
+        lst = ['SA', 'D2', 'HT', 'S9']
         test_class = blackjack_class.Calculation()
         total_points = test_class.point_calc(lst)
-        self.assertEqual(total_points, 14)
+        self.assertEqual(total_points, 22)
 
-        lst = ['HA', "DA", 'HJ']
+        lst = ['HA', "D2", 'HJ']
         test_class = blackjack_class.Calculation()
         total_points = test_class.point_calc(lst)
-        self.assertEqual(total_points, 12)
+        self.assertEqual(total_points, 13)
 
         lst = ['SA', 'HA', "DA"]
         test_class = blackjack_class.Calculation()

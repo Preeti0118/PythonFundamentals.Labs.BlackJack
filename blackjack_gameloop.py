@@ -5,6 +5,10 @@ import blackjack_class
 
 # Call the function to create a shuffled deck of 52 cards
 def create_deck():
+    """
+    creates a shuffled deck of cards
+    :return: shuffled deck of 52 cards
+    """
     deck_cls = blackjack_class.Deck()
     deck = deck_cls.deck_cards()
     return deck
@@ -12,6 +16,13 @@ def create_deck():
 
 # Deal the cards to the player and the dealer
 def gameplay():
+    """
+    this is the main game program for black jack. It distributes 2 cards each to the player and the dealer
+    and asks the dealer to decide to Hit or Stand.
+    Based on players response it calculates the points and decides the winner based on blackjack game rules
+    :return: None
+    """
+
     deck = create_deck()
     deal_cls = blackjack_class.Deal()
     result = deal_cls.deal_cards(deck)
@@ -19,6 +30,7 @@ def gameplay():
     dealer_hand = []
     player_hand = result[0]
     dealer_hand = result[1]
+    deck = result[2]
 
     # Calculate the players points and dealers points
 
@@ -46,8 +58,8 @@ def gameplay():
     while game_continue:
         # Ask the player to Hit or Stand
         player_decision = input('Do you want to H:Hit or S:Stand ? - ')
-        player_decision.upper()
-        if player_decision in ['H', 'HIT']:
+#        player_decision.upper()
+        if player_decision.upper() in ['H', 'HIT']:
             player_result = player_cls.player_hit(player_hand, deck)
             player_hand = player_result[0]
             deck = player_result[1]
