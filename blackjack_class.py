@@ -19,7 +19,7 @@ class Deck:
         num = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         for i in suit:
             for n in num:
-                result.append(i+n)
+                result.append(i + n)
 
 # The function will return a shuffled deck with 52 cards
         shuffle(result)
@@ -39,10 +39,10 @@ class Deal:
         player_hand = []
         dealer_hand = []
 
-        player_hand.append(cards.pop())
-        player_hand.append(cards.pop())
-        dealer_hand.append(cards.pop())
-        dealer_hand.append(cards.pop())
+        player_hand.append(cards.pop(0))
+        player_hand.append(cards.pop(0))
+        dealer_hand.append(cards.pop(0))
+        dealer_hand.append(cards.pop(0))
 
         return [player_hand, dealer_hand]
 
@@ -72,6 +72,37 @@ class Calculation:
 
 
         return point
+
+
+class Player:
+
+    def __init__(self):
+        pass
+
+    def player_hit(self,my_cards,deck):
+        my_cards.append(deck.pop(0))
+        calc_class = Calculation()
+        points = calc_class.point_calc(my_cards)
+        return (my_cards,deck,points)
+
+class Dealer(Player):
+
+    def __init__(self):
+        pass
+
+    def dealer_hit(self, my_cards, deck):
+        calc_class = Calculation()
+        points = calc_class.point_calc(my_cards)
+        results = [my_cards, deck, points]
+        while points <= 16:
+            results = super().player_hit(my_cards, deck)
+            points = results[2]
+
+        return results
+
+
+
+
 
 
 if __name__ == "__main__":
