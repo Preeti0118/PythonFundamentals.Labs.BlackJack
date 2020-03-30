@@ -4,6 +4,13 @@ import blackjack_gameloop
 
 class TestGame(unittest.TestCase):
     def test_deckcards(self):
+
+        """
+        This test case tests function deck_cards.
+        It returns the list of 52 shuffled deck of cards.
+
+        :return:
+        """
         expected_list = [
             'HA', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9', 'HT', 'HJ', 'HQ', 'HK',
             'SA', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'S9', 'ST', 'SJ', 'SQ', 'SK',

@@ -44,12 +44,12 @@ def gameplay():
     print("Player -  this is your hand - ")
     print(player_hand)
     print('These are your points - ' + str(player_point))
-    print('These are dealers cards - ' + dealer_hand[0] + ' Hidden')
+    print('These are dealers cards - ' + dealer_hand[0] + ' and 1 Hidden card')
 
     game_continue = True
 
     if player_point == 21:
-        print('Player Wins')
+        print('Player Wins, Dealer Loses')
         game_continue = False
 
     player_cls = blackjack_class.Player()
@@ -66,15 +66,14 @@ def gameplay():
             player_point = player_result[2]
 
             if player_point == 21:
-                print('Player Wins')
+                print('Player Wins, Dealer Loses')
                 game_continue = False
             elif player_point > 21:
                 print('Player Loses, Dealer Wins')
                 game_continue = False
-            print("dear player -  this is your hand - ")
+            print("player -  this is your hand - ")
             print(player_hand)
-            print('These are your points - ' + str(player_point))
-
+            print('These are player points - ' + str(player_point))
 
         else:
             dealer_result = dealer_cls.dealer_hit(dealer_hand, deck)
@@ -92,16 +91,17 @@ def gameplay():
                 print('Dealer Wins, Player Loses')
             else:
                 print('Game Draw')
-
-            print("player -  this is your hand - ")
-            print(player_hand)
-            print('These are your points - ' + str(player_point))
-
-            print('These are dealers cards - ')
-            print(dealer_hand)
-            print('These are Dealers Points - ' + str(dealer_point))
-
             game_continue = False
+
+    print("player -  this is your hand - ")
+    print(player_hand)
+    print('These are players points - ' + str(player_point))
+
+    print('These are dealers cards - ')
+    print(dealer_hand)
+    print('These are Dealers Points - ' + str(dealer_point))
+
+
 
 
 if __name__ == '__main__':
