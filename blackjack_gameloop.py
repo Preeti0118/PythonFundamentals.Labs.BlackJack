@@ -1,12 +1,12 @@
 # This program will import the classes module
-# And use the classes and function from the import module to run the game
+# And use the classes and function from the import module to run the game.
 import blackjack_class
 
 
 # Call the function to create a shuffled deck of 52 cards
 def create_deck():
     """
-    creates a shuffled deck of cards
+    creates a shuffled deck of cards.
     :return: shuffled deck of 52 cards
     """
     deck_cls = blackjack_class.Deck()

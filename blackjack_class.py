@@ -4,7 +4,7 @@ from random import shuffle
 # Create classes for blackjack program
 # This .py file will work as a module of classes
 # That will be imported in the main program
-# All classes will be part of this module and game will be a separate .py program file
+# All classes will be part of this module and game will be a separate .py program file.
 
 class Deck:
 

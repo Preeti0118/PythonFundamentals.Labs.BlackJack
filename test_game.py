@@ -7,7 +7,7 @@ class TestGame(unittest.TestCase):
 
         """
         This test case tests function deck_cards.
-        It returns the list of 52 shuffled deck of cards.
+        It returns the list of 52 shuffled deck of cards..
 
         :return:
         """
