@@ -4,7 +4,7 @@ from random import shuffle
 # Create classes for blackjack program
 # This .py file will work as a module of classes
 # That will be imported in the main program
-# All classes will be part of this module and game willl be a separate .py program file
+# All classes will be part of this module and game will be a separate .py program file.
 
 class Deck:
 
@@ -13,7 +13,7 @@ class Deck:
 
     # A function for creating a deck
 
-    # The deck will contain cards of Suits: Heart, Spade, Diamond, Clubs  and Ranks: Ace, 2-10, Jack, Queen, King
+    # The deck will contain cards of Suits: Heart, Spade, Diamond, Clubs  and Ranks: Ace, 2-9, T, Jack, Queen, King
     def deck_cards(self):
         """
         Create a list of 52 cards and shuffle them
@@ -114,7 +114,7 @@ class Player:
         return (my_cards, deck, points)
 
 
-class Dealer(Player):
+class Dealer(Player):  # Dealer class is inherited from Player class.
 
     def __init__(self):
         pass
